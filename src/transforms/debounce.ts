@@ -24,7 +24,7 @@ import { Transform } from "../types.ts";
  */
 export function debounce<T>(ms: number): Transform<T> {
   let timeout: number;
-  let timeoutP: Promise<unknown>;
+  let timeoutP: Promise<void>;
   let savedChunk: T;
   return new TransformStream({
     transform(chunk, controller) {
@@ -32,7 +32,7 @@ export function debounce<T>(ms: number): Transform<T> {
       if (timeout > 0) {
         clearTimeout(timeout);
       }
-      timeoutP = new Promise(resolve => {
+      timeoutP = new Promise<void>(resolve => {
         // @ts-ignore NodeJS types are interfering here
         timeout = setTimeout(() => {
           controller.enqueue(savedChunk);
