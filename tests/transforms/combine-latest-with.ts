@@ -10,8 +10,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { external, combineLatestWith, collect, EOF } from "../../src/index.js";
-import { waitTicks } from "../utils.js";
+import { external, combineLatestWith, collect, EOF } from "../../src/index.ts";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("combineLatestWith()", function() {
   Mocha.it("combines the latest values of 2 observables", async function() {

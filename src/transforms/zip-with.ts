@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { Transform, Observable } from "../types.js";
-import { zip } from "../combiners/zip.js";
+import { Transform, Observable } from "../types.ts";
+import { zip } from "../combiners/zip.ts";
 
 /**
  * Zips items from the original observable with the `other` observable.

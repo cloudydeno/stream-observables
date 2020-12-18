@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Transform } from "../types.js";
+import { Transform } from "../types.ts";
 
 /**
  * Returns a `Transform` that emits the first `n` items from the original

@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { collect, fromAsyncFunction } from "../../src/index.js";
+import { collect, fromAsyncFunction } from "../../src/index.ts";
 
 Mocha.describe("fromAsyncFunction()", function() {
   Mocha.it("creates observable", async function() {

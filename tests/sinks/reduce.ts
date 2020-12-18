@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, reduce } from "../../src/index.js";
+import { range, reduce } from "../../src/index.ts";
 
 Mocha.describe("reduce()", function() {
   Mocha.it("reduces over the items of an observable", async function() {

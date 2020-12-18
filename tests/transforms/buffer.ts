@@ -10,9 +10,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { buffer, collect, external, EOF } from "../../src/index.js";
+import { buffer, collect, external, EOF } from "../../src/index.ts";
 
-import { waitTicks } from "../utils.js";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("buffer()", function() {
   Mocha.it("emits arrays whenever the notifier emits", async function() {

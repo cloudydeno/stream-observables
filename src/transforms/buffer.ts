@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable, Transform } from "../types.js";
+import { Observable, Transform } from "../types.ts";
 
 /**
  * Collects items from the original observable into buffers until the

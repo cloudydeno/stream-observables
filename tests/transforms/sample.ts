@@ -10,9 +10,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { sample, collect, external, EOF } from "../../src/index.js";
+import { sample, collect, external, EOF } from "../../src/index.ts";
 
-import { waitTicks } from "../utils.js";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("sample()", function() {
   Mocha.it("emits samples", async function() {

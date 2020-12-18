@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, subchain, filter, map, collect } from "../../src/index.js";
+import { range, subchain, filter, map, collect } from "../../src/index.ts";
 
 Mocha.describe("subchain()", function() {
   Mocha.it("runs the subchain", async function() {

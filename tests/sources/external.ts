@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { external, EOF } from "../../src/index.js";
+import { external, EOF } from "../../src/index.ts";
 
 Mocha.describe("external()", function() {
   Mocha.it("emits when next() is called", async function() {

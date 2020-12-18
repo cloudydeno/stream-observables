@@ -10,8 +10,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { external, mergeWith, collect, EOF } from "../../src/index.js";
-import { waitTicks } from "../utils.js";
+import { external, mergeWith, collect, EOF } from "../../src/index.ts";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("mergeWith()", function() {
   Mocha.it("combines 2 observables", async function() {

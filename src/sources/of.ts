@@ -11,9 +11,9 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
-import { external, EOF } from "./external.js";
-import { just } from "./just.js";
+import { Observable } from "../types.ts";
+import { external, EOF } from "./external.ts";
+import { just } from "./just.ts";
 
 /**
  * An alias for {@link just}.

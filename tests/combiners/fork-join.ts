@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { forkJoin, range, single } from "../../src/index.js";
+import { forkJoin, range, single } from "../../src/index.ts";
 
 Mocha.describe("forkJoin()", function() {
   Mocha.it("merges multiple observables", async function() {

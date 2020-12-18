@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, fromIterable, extractLast } from "../../src/index.js";
+import { range, fromIterable, extractLast } from "../../src/index.ts";
 
 Mocha.describe("extractLast()", function() {
   Mocha.it("returns the last item", async function() {

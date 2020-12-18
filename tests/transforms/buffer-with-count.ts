@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, bufferWithCount, collect } from "../../src/index.js";
+import { range, bufferWithCount, collect } from "../../src/index.ts";
 
 Mocha.describe("bufferWithCount()", function() {
   Mocha.it("splits the stream into chunks", async function() {

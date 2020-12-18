@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, scan, collect } from "../../src/index.js";
+import { range, scan, collect } from "../../src/index.ts";
 
 Mocha.describe("scan()", function() {
   Mocha.it(

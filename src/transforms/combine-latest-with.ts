@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { Transform, Observable } from "../types.js";
-import { combineLatest } from "../combiners/combine-latest.js";
+import { Transform, Observable } from "../types.ts";
+import { combineLatest } from "../combiners/combine-latest.ts";
 
 /**
  * Combines items from the original observable with the other observables.

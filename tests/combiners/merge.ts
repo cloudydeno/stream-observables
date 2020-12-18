@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { external, EOF, merge, collect } from "../../src/index.js";
-import { waitTicks } from "../utils.js";
+import { external, EOF, merge, collect } from "../../src/index.ts";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("merge()", function() {
   Mocha.it("merges multiple observables", async function() {

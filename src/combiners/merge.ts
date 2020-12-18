@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
+import { Observable } from "../types.ts";
 
 /**
  * Merges multiple observables by emitting all items from all the observables.

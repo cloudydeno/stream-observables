@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, zipWith, collect } from "../../src/index.js";
+import { fromIterable, zipWith, collect } from "../../src/index.ts";
 
 Mocha.describe("zipWith()", function() {
   Mocha.it("combines 2 observables", async function() {

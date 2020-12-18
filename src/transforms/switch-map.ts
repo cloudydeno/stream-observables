@@ -11,10 +11,10 @@
  * limitations under the License.
  */
 
-import { Observable, Transform } from "../types.js";
-import { externalPromise } from "../utils.js";
-import { map } from "./map.js";
-import { switchAll } from "./switch-all.js";
+import { Observable, Transform } from "../types.ts";
+import { externalPromise } from "../utils.ts";
+import { map } from "./map.ts";
+import { switchAll } from "./switch-all.ts";
 
 /**
  * Converts each emitted item to an observable, producing values only

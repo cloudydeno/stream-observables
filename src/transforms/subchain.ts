@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable, Transform } from "../types.js";
+import { Observable, Transform } from "../types.ts";
 
 /**
  * Returns a `Transform` that applies `f` to the observable.

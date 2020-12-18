@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
+import { Observable } from "../types.ts";
 
 /**
  * Creates an observable that forever emits the same value.

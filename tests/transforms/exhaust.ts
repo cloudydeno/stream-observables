@@ -16,10 +16,10 @@ import {
   collect,
   external,
   EOF
-} from "../../src/index.js";
-import { NextFunc } from "../../src/sources/external.js";
+} from "../../src/index.ts";
+import { NextFunc } from "../../src/sources/external.ts";
 
-import { waitTicks } from "../utils.js";
+import { waitTicks } from "../utils.ts";
 
 function safeNext<T>(o: { next: NextFunc<T> }, v: T) {
   try {

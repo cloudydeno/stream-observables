@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable, Transform } from "../types.js";
+import { Observable, Transform } from "../types.ts";
 
 /**
  * Emits the most recently emitted value from the Observable whenever

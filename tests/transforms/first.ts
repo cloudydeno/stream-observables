@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, first, collect } from "../../src/index.js";
+import { range, first, collect } from "../../src/index.ts";
 
 Mocha.describe("first()", function() {
   Mocha.it("returns the first item", async function() {

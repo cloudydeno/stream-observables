@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, endWith, collect } from "../../src/index.js";
+import { fromIterable, endWith, collect } from "../../src/index.ts";
 
 Mocha.describe("endWidth()", function() {
   Mocha.it("ends in the given items", async function() {

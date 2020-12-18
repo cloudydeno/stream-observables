@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { collect, just, switchMap, range } from "../../src/index.js";
+import { collect, just, switchMap, range } from "../../src/index.ts";
 
 Mocha.describe("switch-all()", function() {
   Mocha.it("re-emit the first observable", async function() {

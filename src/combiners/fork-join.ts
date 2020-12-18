@@ -11,9 +11,9 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
-import { zip } from "./zip.js";
-import { last } from "../transforms/last.js";
+import { Observable } from "../types.ts";
+import { zip } from "./zip.ts";
+import { last } from "../transforms/last.ts";
 
 /**
  * Combines items from multiple observables.

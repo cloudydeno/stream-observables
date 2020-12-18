@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Transform } from "../types.js";
+import { Transform } from "../types.ts";
 
 export type ScanFunc<U, T> = (acc: U, v: T) => U;
 

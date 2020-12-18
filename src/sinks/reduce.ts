@@ -11,9 +11,9 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
-import { scan, ScanFunc } from "../transforms/scan.js";
-import { extractLast } from "./extract-last.js";
+import { Observable } from "../types.ts";
+import { scan, ScanFunc } from "../transforms/scan.ts";
+import { extractLast } from "./extract-last.ts";
 
 /**
  * Accumulates value, starting with `v0` and applying `f` to each emitted item.

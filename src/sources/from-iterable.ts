@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.js";
-import { external, EOF } from "./external.js";
+import { Observable } from "../types.ts";
+import { external, EOF } from "./external.ts";
 
 /**
  * Creates an observable from a synchronous iterable.

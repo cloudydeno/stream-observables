@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { Transform, Observable } from "../types.js";
-import { merge } from "../combiners/merge.js";
+import { Transform, Observable } from "../types.ts";
+import { merge } from "../combiners/merge.ts";
 
 /**
  * Merges another observable by emitting all items from both the original

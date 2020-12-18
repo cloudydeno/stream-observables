@@ -11,8 +11,8 @@
  * limitations under the License.
  */
 
-import { external, EOF, concat, collect, range } from "../../src/index.js";
-import { waitTicks } from "../utils.js";
+import { external, EOF, concat, collect, range } from "../../src/index.ts";
+import { waitTicks } from "../utils.ts";
 
 Mocha.describe("concat()", function() {
   Mocha.it("concatenates multiple observables", async function() {

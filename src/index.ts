@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-export * from "./combiners/index.js";
-export * from "./sources/index.js";
-export * from "./transforms/index.js";
-export * from "./sinks/index.js";
+export * from "./combiners/index.ts";
+export * from "./sources/index.ts";
+export * from "./transforms/index.ts";
+export * from "./sinks/index.ts";

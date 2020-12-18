@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, distinct, collect } from "../../src/index.js";
+import { fromIterable, distinct, collect } from "../../src/index.ts";
 
 Mocha.describe("distinct()", function() {
   Mocha.it("discards sequences of equal items", async function() {

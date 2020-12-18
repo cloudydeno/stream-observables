@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromTimer, forEach, discard } from "../../src/index.js";
+import { fromTimer, forEach, discard } from "../../src/index.ts";
 
 Mocha.describe("fromTimer()", function() {
   Mocha.it("emits null in the given interval", function(done) {

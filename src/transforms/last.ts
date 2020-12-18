@@ -11,9 +11,9 @@
  * limitations under the License.
  */
 
-import { external, EOF } from "../sources/external.js";
-import { Transform } from "../types.js";
-import { extractLast, discard } from "../sinks/index.js";
+import { external, EOF } from "../sources/external.ts";
+import { Transform } from "../types.ts";
+import { extractLast, discard } from "../sinks/index.ts";
 
 /**
  * Returns a `Transform` that emits the last item in an observable.
