@@ -45,7 +45,7 @@ export function combineLatest<T>(...os: Array<Observable<T>>): Observable<T[]> {
           if (done) {
             return;
           }
-          latestValue[idx] = value;
+          latestValue[idx] = value ?? null;
           hasValue.add(reader);
           if (hasValue.size === os.length) {
             controller.enqueue([...(latestValue as T[])]);

@@ -38,7 +38,9 @@ export function amb<T>(...os: Array<Observable<T>>): Observable<T> {
         if (done) {
           return controller.close();
         }
-        controller.enqueue(value);
+        if (value !== undefined) {
+          controller.enqueue(value);
+        }
         ({ value, done } = await fastestObs.read());
       }
     }

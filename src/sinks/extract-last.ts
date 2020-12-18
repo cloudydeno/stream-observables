@@ -23,7 +23,7 @@ import { Observable } from "../types.ts";
  */
 export async function extractLast<T>(o: Observable<T>): Promise<T> {
   const reader = o.getReader();
-  let latestValue: T;
+  let latestValue: T | undefined;
   let hasLatestValue = false;
   while (true) {
     const { value, done } = await reader.read();

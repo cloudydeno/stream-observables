@@ -31,7 +31,9 @@ export function merge<T>(...os: Array<Observable<T>>): Observable<T> {
           if (done) {
             return;
           }
-          controller.enqueue(value);
+          if (value !== undefined) {
+            controller.enqueue(value);
+          }
         }
       });
       await Promise.all(forwarders);

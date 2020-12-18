@@ -38,11 +38,13 @@ export function switchAll<T>(): Transform<Observable<T>, T> {
         const readerCopy = currentReader;
         while (true) {
           try {
-            const { value, done } = await readerCopy.read();
+            const { value, done } = await readerCopy!.read();
             if (done) {
               break;
             }
-            controller.enqueue(value);
+            if (value !== undefined) {
+              controller.enqueue(value);
+            }
           } catch (e) {
             break;
           }

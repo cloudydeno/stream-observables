@@ -40,7 +40,7 @@ export function zip<T>(...os: Array<Observable<T>>): Observable<T[]> {
         if (values.some(({ done }) => done)) {
           break;
         }
-        controller.enqueue(values.map(({ value }) => value));
+        controller.enqueue(values.map(({ value }) => value).flatMap(x => x === undefined ? [] : [x]));
       }
       readers.forEach(r => r.releaseLock());
       controller.close();

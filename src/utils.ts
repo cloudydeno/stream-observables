@@ -13,7 +13,7 @@
 
 export function externalPromise<T = unknown>() {
   let resolve: (value?: T) => void;
-  const promise = new Promise<T>(_resolve => (resolve = _resolve));
+  const promise = new Promise<T | undefined>(_resolve => (resolve = _resolve));
   // @ts-ignore
   return { resolve, promise };
 }

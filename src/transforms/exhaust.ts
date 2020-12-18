@@ -47,7 +47,7 @@ export function exhaust<T>(): Transform<Observable<T>, T> {
             return;
           }
 
-          if (currentReader) {
+          if (currentReader || !value) {
             continue;
           }
           currentReader = value.getReader();
@@ -62,7 +62,9 @@ export function exhaust<T>(): Transform<Observable<T>, T> {
                 currentReader = null;
                 return;
               }
-              controller.enqueue(value);
+              if (value !== undefined) {
+                controller.enqueue(value);
+              }
             }
           })();
         }

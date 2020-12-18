@@ -30,5 +30,8 @@ export async function single<T>(o: Observable<T>): Promise<T> {
   if (!(await reader.read()).done) {
     throw new Error("Observable emitted more than one item");
   }
+  if (value === undefined) {
+    throw new Error("Observable only emitted 'undefined'");
+  }
   return value;
 }
