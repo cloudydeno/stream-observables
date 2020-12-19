@@ -1,3 +1,14 @@
+## deno port
+
+This fork contains patches to make the library usable within Deno.
+
+Published here until I figure out how to properly ship Deno support thru the upstream:
+https://uber.danopia.net/deno/observables-with-streams@v1/index.ts
+
+I turned on issues; if you try using this in Deno and have a problem, please file.
+
+Cheers
+
 # Observables with Streams
 
 A library for observables built with [WHATWG streams](https://streams.spec.whatwg.org). This library is inspired by [ReactiveX’s operators](http://reactivex.io/documentation/operators.html) and implements a subset of them using [streams](https://streams.spec.whatwg.org).
