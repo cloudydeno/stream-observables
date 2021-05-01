@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromNext, EOF } from "../../src/index.ts";
+import { fromNext, EOF } from "../../src/mod.ts";
 
 Mocha.describe("fromNext()", function() {
   Mocha.it("emits when next() is called", async function() {

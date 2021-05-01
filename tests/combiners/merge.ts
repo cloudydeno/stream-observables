@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { external, EOF, merge, collect } from "../../src/index.ts";
+import { external, EOF, merge, collect } from "../../src/mod.ts";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("merge()", function() {

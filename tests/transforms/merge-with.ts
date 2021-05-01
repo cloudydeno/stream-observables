@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { external, mergeWith, collect, EOF } from "../../src/index.ts";
+import { external, mergeWith, collect, EOF } from "../../src/mod.ts";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("mergeWith()", function() {

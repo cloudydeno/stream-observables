@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromGenerator } from "../../src/index.ts";
+import { fromGenerator } from "../../src/mod.ts";
 
 Mocha.describe("fromGenerator()", function() {
   Mocha.it("works with generators", async function() {

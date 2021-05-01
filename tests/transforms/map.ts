@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, map, collect } from "../../src/index.ts";
+import { range, map, collect } from "../../src/mod.ts";
 
 Mocha.describe("map()", function() {
   Mocha.it("maps each item", async function() {

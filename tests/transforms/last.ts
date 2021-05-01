@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, last, collect } from "../../src/index.ts";
+import { range, last, collect } from "../../src/mod.ts";
 
 Mocha.describe("last()", function() {
   Mocha.it("returns the last item", async function() {

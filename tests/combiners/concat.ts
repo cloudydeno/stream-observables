@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { external, EOF, concat, collect, range } from "../../src/index.ts";
+import { external, EOF, concat, collect, range } from "../../src/mod.ts";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("concat()", function() {

@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-export * from "./combiners/index.ts";
-export * from "./sources/index.ts";
-export * from "./transforms/index.ts";
-export * from "./sinks/index.ts";
+export * from "./combiners/mod.ts";
+export * from "./sources/mod.ts";
+export * from "./transforms/mod.ts";
+export * from "./sinks/mod.ts";

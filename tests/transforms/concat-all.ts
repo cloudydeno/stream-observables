@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, concatAll, collect, just } from "../../src/index.ts";
+import { fromIterable, concatAll, collect, just } from "../../src/mod.ts";
 
 Mocha.describe("concatAll()", function() {
   Mocha.it("concatenates emitted observables", async function() {

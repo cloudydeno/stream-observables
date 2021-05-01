@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, forEach, collect, range } from "../../src/index.ts";
+import { fromIterable, forEach, collect, range } from "../../src/mod.ts";
 import { waitTicks, waitTask } from "../utils.ts";
 
 Mocha.describe("forEach()", function() {

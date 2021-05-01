@@ -14,7 +14,7 @@
 import { Transform, Observable } from "../types.ts";
 import { buffer } from "./buffer.ts";
 import { map } from "./map.ts";
-import { fromIterable } from "../sources/index.ts";
+import { fromIterable } from "../sources/mod.ts";
 
 /**
  * Branches out the source observable as nested observables whenever

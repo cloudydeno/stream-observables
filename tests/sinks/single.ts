@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, single } from "../../src/index.ts";
+import { fromIterable, single } from "../../src/mod.ts";
 
 Mocha.describe("single()", function() {
   Mocha.it(

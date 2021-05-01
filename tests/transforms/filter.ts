@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, filter, collect } from "../../src/index.ts";
+import { range, filter, collect } from "../../src/mod.ts";
 
 Mocha.describe("filter()", function() {
   Mocha.it("removes items that don’t match the predicate", async function() {

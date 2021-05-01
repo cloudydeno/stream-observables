@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { fromIterable, zip, collect } from "../../src/index.ts";
+import { fromIterable, zip, collect } from "../../src/mod.ts";
 
 Mocha.describe("zip()", function() {
   Mocha.it("zips multiple observables", async function() {

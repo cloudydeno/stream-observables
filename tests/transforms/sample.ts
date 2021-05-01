@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { sample, collect, external, EOF } from "../../src/index.ts";
+import { sample, collect, external, EOF } from "../../src/mod.ts";
 
 import { waitTicks } from "../utils.ts";
 

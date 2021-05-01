@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { range, collect } from "../../src/index.ts";
+import { range, collect } from "../../src/mod.ts";
 
 Mocha.describe("range()", function() {
   Mocha.it("emits a series of integers", async function() {

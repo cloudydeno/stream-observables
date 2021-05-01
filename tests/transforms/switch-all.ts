@@ -16,7 +16,7 @@ import {
   collect,
   external,
   EOF
-} from "../../src/index.ts";
+} from "../../src/mod.ts";
 import { NextFunc } from "../../src/sources/external.ts";
 
 import { waitTicks } from "../utils.ts";

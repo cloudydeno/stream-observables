@@ -13,7 +13,7 @@
 
 import { external, EOF } from "../sources/external.ts";
 import { Transform } from "../types.ts";
-import { extractLast, discard } from "../sinks/index.ts";
+import { extractLast, discard } from "../sinks/mod.ts";
 
 /**
  * Returns a `Transform` that emits the last item in an observable.

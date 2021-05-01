@@ -13,7 +13,7 @@
 
 import { external, EOF } from "../sources/external.ts";
 import { Transform } from "../types.ts";
-import { extractFirst, discard } from "../sinks/index.ts";
+import { extractFirst, discard } from "../sinks/mod.ts";
 
 /**
  * Returns a `Transform` that emits the first item in an observable.

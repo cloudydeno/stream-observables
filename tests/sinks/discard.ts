@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, discard } from "../../src/index.ts";
+import { fromIterable, discard } from "../../src/mod.ts";
 
 Mocha.describe("discard()", function() {
   Mocha.it("calls a function for each value", async function() {

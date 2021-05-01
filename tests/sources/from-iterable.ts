@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable } from "../../src/index.ts";
+import { fromIterable } from "../../src/mod.ts";
 
 Mocha.describe("fromIterable()", function() {
   Mocha.it("emits all items", async function() {

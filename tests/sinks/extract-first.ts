@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, extractFirst } from "../../src/index.ts";
+import { fromIterable, extractFirst } from "../../src/mod.ts";
 
 Mocha.describe("extractFirst()", function() {
   Mocha.it("returns the first item", async function() {

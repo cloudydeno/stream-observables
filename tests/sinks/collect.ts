@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fromIterable, collect } from "../../src/index.ts";
+import { fromIterable, collect } from "../../src/mod.ts";
 
 Mocha.describe("collect()", function() {
   Mocha.it("returns all items with an array", async function() {
