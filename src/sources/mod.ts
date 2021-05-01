@@ -13,6 +13,7 @@
 
 export * from "./external.ts";
 export * from "./from-async-function.ts";
+export * from "./from-deno-reader.ts";
 export * from "./from-event.ts";
 export * from "./from-generator.ts";
 export * from "./from-iterable.ts";
