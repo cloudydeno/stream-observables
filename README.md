@@ -2,9 +2,6 @@
 
 This fork contains patches to make the library usable within Deno.
 
-Published here until I figure out how to properly ship Deno support thru the upstream:
-https://uber.danopia.net/deno/observables-with-streams@v1/index.ts
-
 I turned on issues; if you try using this in Deno and have a problem, please file.
 
 Cheers
