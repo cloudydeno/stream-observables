@@ -10,6 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Mocha, chai } from "../deno-shim.ts";
 import { external, mergeWith, collect, EOF } from "../../src/mod.ts";
 import { waitTicks } from "../utils.ts";
 

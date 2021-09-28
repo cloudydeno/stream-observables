@@ -10,10 +10,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Mocha, chai } from "../deno-shim.ts";
 import { fromEvent, EOF } from "../../src/mod.ts";
 
-Mocha.describe("fromEvent()", function() {
-  Mocha.it("emits on events", async function() {
+Deno.test({
+  name: "fromEvent() / emits on events",
+  fn: async function() {
     const { port1, port2 } = new MessageChannel();
     const observable = fromEvent<MessagePort, MessageEvent>(port2, "message");
     port2.start();
@@ -22,8 +24,12 @@ Mocha.describe("fromEvent()", function() {
     const reader = observable.getReader();
     let msg;
     msg = (await reader.read()).value;
-    chai.expect(msg.data).to.equal(1);
+    chai.expect(msg?.data).to.equal(1);
     msg = (await reader.read()).value;
-    chai.expect(msg.data).to.equal(2);
-  });
+    chai.expect(msg?.data).to.equal(2);
+
+    port1.close();
+    port2.close();
+  },
+  sanitizeOps: false,
 });

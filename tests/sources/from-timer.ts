@@ -10,6 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Mocha, chai } from "../deno-shim.ts";
 import { fromTimer, forEach, discard } from "../../src/mod.ts";
 
 Mocha.describe("fromTimer()", function() {

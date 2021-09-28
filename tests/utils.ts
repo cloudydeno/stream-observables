@@ -22,7 +22,7 @@ port2.start();
 export function waitTask() {
   const localId = uid++;
   port1.postMessage(localId);
-  return new Promise(resolve => {
+  return new Promise<void>(resolve => {
     port2.addEventListener("message", function f(ev) {
       if (ev.data !== localId) {
         return;

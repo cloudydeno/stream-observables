@@ -10,6 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Mocha, chai } from "../deno-shim.ts";
 import { repeat, range, zipWith, collect } from "../../src/mod.ts";
 
 Mocha.describe("repeat()", function() {
