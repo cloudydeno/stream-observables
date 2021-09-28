@@ -27,42 +27,44 @@ export function switchAll<T>(): Transform<Observable<T>, T> {
   let innerStreamCounter = 0;
   let outerDone = false;
   let currentReader: ReadableStreamReader<T> | null;
-  return new TransformStream({
-    transform(o, controller) {
-      innerStreamCounter++;
-      if (currentReader) {
-        currentReader.cancel();
-      }
-      currentReader = o.getReader();
-      (async () => {
-        const readerCopy = currentReader;
-        while (true) {
-          try {
-            const { value, done } = await readerCopy!.read();
-            if (done) {
+  return new TransformStream(
+    {
+      transform(o, controller) {
+        innerStreamCounter++;
+        if (currentReader) {
+          currentReader.cancel();
+        }
+        currentReader = o.getReader();
+        (async () => {
+          const readerCopy = currentReader;
+          while (true) {
+            try {
+              const { value, done } = await readerCopy.read();
+              if (done) {
+                break;
+              }
+              controller.enqueue(value!);
+            } catch (e) {
               break;
             }
-            if (value !== undefined) {
-              controller.enqueue(value);
-            }
-          } catch (e) {
-            break;
           }
+          innerStreamCounter--;
+          if (innerStreamCounter === 0) {
+            currentReader = null;
+          }
+          if (outerDone) {
+            lastInnerDone.resolve();
+          }
+        })();
+      },
+      async flush() {
+        outerDone = true;
+        if (currentReader) {
+          await lastInnerDone.promise;
         }
-        innerStreamCounter--;
-        if (innerStreamCounter === 0) {
-          currentReader = null;
-        }
-        if (outerDone) {
-          lastInnerDone.resolve();
-        }
-      })();
-    },
-    async flush() {
-      outerDone = true;
-      if (currentReader) {
-        await lastInnerDone.promise;
       }
-    }
-  });
+    },
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
 }

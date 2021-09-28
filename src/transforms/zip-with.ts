@@ -24,7 +24,11 @@ import { zip } from "../combiners/zip.ts";
  * @returns Transform that emits pairs of items.
  */
 export function zipWith<S, T>(other: Observable<T>): Transform<S, [S, T]> {
-  const { readable, writable } = new TransformStream<S, S>();
+  const { readable, writable } = new TransformStream<S, S>(
+    undefined,
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
 
   return {
     writable,

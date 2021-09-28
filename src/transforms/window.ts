@@ -28,7 +28,11 @@ import { fromIterable } from "../sources/mod.ts";
 export function window<T>(
   notifier: Observable<unknown>
 ): Transform<T, Observable<T>> {
-  const { readable, writable } = new TransformStream();
+  const { readable, writable } = new TransformStream(
+    undefined,
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
   return {
     writable,
     readable: readable

@@ -23,11 +23,15 @@ import { Transform } from "../types.ts";
  * source observables ends.
  */
 export function endWith<T>(...vs: T[]): Transform<T> {
-  return new TransformStream<T, T>({
-    flush(controller) {
-      for (const v of vs) {
-        controller.enqueue(v);
+  return new TransformStream<T, T>(
+    {
+      flush(controller) {
+        for (const v of vs) {
+          controller.enqueue(v);
+        }
       }
-    }
-  });
+    },
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
 }

@@ -26,7 +26,11 @@ import { switchAll } from "./switch-all.ts";
  * created by projecting values from the outer observable.
  */
 export function switchMap<T, S>(f: (v: T) => Observable<S>): Transform<T, S> {
-  const { readable, writable } = new TransformStream<T, T>();
+  const { readable, writable } = new TransformStream<T, T>(
+    undefined,
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
   return {
     writable,
     readable: readable.pipeThrough(map(f)).pipeThrough(switchAll())

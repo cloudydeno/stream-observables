@@ -15,3 +15,4 @@ export * from "./combiners/mod.ts";
 export * from "./sources/mod.ts";
 export * from "./transforms/mod.ts";
 export * from "./sinks/mod.ts";
+export * from "./types.ts";

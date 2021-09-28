@@ -22,11 +22,15 @@ import { Transform } from "../types.ts";
  * @returns Transform that emits some items from the original observable.
  */
 export function filter<T>(f: (x: T) => boolean): Transform<T> {
-  return new TransformStream<T, T>({
-    transform(chunk, controller) {
-      if (f(chunk)) {
-        controller.enqueue(chunk);
+  return new TransformStream<T, T>(
+    {
+      transform(chunk, controller) {
+        if (f(chunk)) {
+          controller.enqueue(chunk);
+        }
       }
-    }
-  });
+    },
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
 }

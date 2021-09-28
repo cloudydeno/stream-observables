@@ -29,46 +29,47 @@ export function exhaust<T>(): Transform<Observable<T>, T> {
   const { readable, writable } = new TransformStream<
     Observable<T>,
     Observable<T>
-  >();
+  >(undefined, { highWaterMark: 1 }, { highWaterMark: 0 });
   let currentReader: ReadableStreamReader<T> | null;
   return {
     writable,
-    readable: new ReadableStream<T>({
-      async start(controller) {
-        const reader = readable.getReader();
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) {
-            outerDone = true;
-            if (currentReader) {
-              await lastInnerDone.promise;
+    readable: new ReadableStream<T>(
+      {
+        async start(controller) {
+          const reader = readable.getReader();
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) {
+              outerDone = true;
+              if (currentReader) {
+                await lastInnerDone.promise;
+              }
+              controller.close();
+              return;
             }
-            controller.close();
-            return;
-          }
 
-          if (currentReader || !value) {
-            continue;
-          }
-          currentReader = value.getReader();
-          (async () => {
-            const readerCopy = currentReader;
-            while (true) {
-              const { value, done } = await readerCopy!.read();
-              if (done) {
-                if (outerDone) {
-                  lastInnerDone.resolve();
-                }
-                currentReader = null;
-                return;
-              }
-              if (value !== undefined) {
-                controller.enqueue(value);
-              }
+            if (currentReader) {
+              continue;
             }
-          })();
+            currentReader = value!.getReader();
+            (async () => {
+              const readerCopy = currentReader;
+              while (true) {
+                const { value, done } = await readerCopy!.read();
+                if (done) {
+                  if (outerDone) {
+                    lastInnerDone.resolve();
+                  }
+                  currentReader = null;
+                  return;
+                }
+                controller.enqueue(value!);
+              }
+            })();
+          }
         }
-      }
-    })
+      },
+      { highWaterMark: 0 }
+    )
   };
 }

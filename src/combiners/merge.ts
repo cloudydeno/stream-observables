@@ -22,22 +22,23 @@ import { Observable } from "../types.ts";
  * @returns Observable that emits items from all observables.
  */
 export function merge<T>(...os: Array<Observable<T>>): Observable<T> {
-  return new ReadableStream<T>({
-    async start(controller) {
-      const forwarders = os.map(async o => {
-        const reader = o.getReader();
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) {
-            return;
+  return new ReadableStream<T>(
+    {
+      async start(controller) {
+        const forwarders = os.map(async o => {
+          const reader = o.getReader();
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) {
+              return;
+            }
+            controller.enqueue(value!);
           }
-          if (value !== undefined) {
-            controller.enqueue(value);
-          }
-        }
-      });
-      await Promise.all(forwarders);
-      controller.close();
-    }
-  });
+        });
+        await Promise.all(forwarders);
+        controller.close();
+      }
+    },
+    { highWaterMark: 0 }
+  );
 }

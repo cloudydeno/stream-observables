@@ -25,25 +25,29 @@ import { Observable, Transform } from "../types.ts";
  */
 export function buffer<T>(notifier: Observable<unknown>): Transform<T, T[]> {
   let buffer: T[] = [];
-  return new TransformStream<T, T[]>({
-    start(controller) {
-      (async () => {
-        const reader = notifier.getReader();
-        while (true) {
-          const { done } = await reader.read();
-          if (buffer.length > 0) {
-            controller.enqueue(buffer);
-            buffer = [];
+  return new TransformStream<T, T[]>(
+    {
+      start(controller) {
+        (async () => {
+          const reader = notifier.getReader();
+          while (true) {
+            const { done } = await reader.read();
+            if (buffer.length > 0) {
+              controller.enqueue(buffer);
+              buffer = [];
+            }
+            if (done) {
+              controller.terminate();
+              return;
+            }
           }
-          if (done) {
-            controller.terminate();
-            return;
-          }
-        }
-      })();
+        })();
+      },
+      transform(chunk) {
+        buffer.push(chunk);
+      }
     },
-    transform(chunk) {
-      buffer.push(chunk);
-    }
-  });
+    { highWaterMark: 1 },
+    { highWaterMark: 0 }
+  );
 }
