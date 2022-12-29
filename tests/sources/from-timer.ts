@@ -11,17 +11,12 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromTimer, forEach, discard } from "../../src/mod.ts";
+import { fromTimer, take, collect } from "../../src/mod.ts";
 
 Mocha.describe("fromTimer()", function() {
-  Mocha.it("emits null in the given interval", function(done) {
+  Mocha.it("emits null in the given interval", async () => {
     const observable = fromTimer(10);
-    let list: any[] = [];
-
-    observable.pipeThrough(forEach(v => list.push(v))).pipeTo(discard());
-    setTimeout(() => {
-      chai.expect(list).to.have.length(4);
-      done();
-    }, 40);
+    const list = await collect(observable.pipeThrough(take(4)));
+    chai.expect(list).to.have.length(4);
   });
 });

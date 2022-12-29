@@ -25,10 +25,11 @@ export type NextFunc<T> = (v: T | typeof EOF) => void;
  *
  * @typeparam T Type of items to be emitted by the observable.
  */
-export function external<T>() {
+export function external<T>(cancel?: ReadableStreamErrorCallback) {
   let next: NextFunc<T>;
   const observable = new ReadableStream<T>(
     {
+      cancel: cancel,
       async start(controller) {
         next = (v: T | typeof EOF) => {
           if (v === EOF) {
