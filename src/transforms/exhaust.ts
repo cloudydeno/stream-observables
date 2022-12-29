@@ -30,7 +30,7 @@ export function exhaust<T>(): Transform<Observable<T>, T> {
     Observable<T>,
     Observable<T>
   >(undefined, { highWaterMark: 1 }, { highWaterMark: 0 });
-  let currentReader: ReadableStreamReader<T> | null;
+  let currentReader: ReadableStreamDefaultReader<T> | null;
   return {
     writable,
     readable: new ReadableStream<T>(

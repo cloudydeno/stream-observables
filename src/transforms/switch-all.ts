@@ -26,7 +26,7 @@ export function switchAll<T>(): Transform<Observable<T>, T> {
   const lastInnerDone = externalPromise();
   let innerStreamCounter = 0;
   let outerDone = false;
-  let currentReader: ReadableStreamReader<T> | null;
+  let currentReader: ReadableStreamDefaultReader<T> | null;
   return new TransformStream(
     {
       transform(o, controller) {
