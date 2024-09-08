@@ -1,6 +1,8 @@
 This module is a Deno-friendly port
 of [observables-with-streams](https://github.com/surma/observables-with-streams).
 
+It is published to JSR.io as `@cloudydeno/stream-observables`.
+
 Subset of original README below:
 
 # Observables with Streams
@@ -14,7 +16,7 @@ The goal of this library is to implement observables making as much use of the p
 ## Example
 
 ```typescript
-import * as ows from "https://deno.land/x/stream_observables/mod.ts";
+import * as ows from "jsr:@cloudydeno/stream-observables@^1.0.0";
 
 console.log('Tap Enter to add energy!');
 ows.merge(
