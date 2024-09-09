@@ -16,6 +16,6 @@ import { discard } from "./discard.ts";
 /**
  * Alias for {@link discard}.
  */
-export function subscribe<T>(f: (v: T) => void = () => {}) {
+export function subscribe<T>(f: (v: T) => void = () => {}): WritableStream<T> {
   return discard(f);
 }

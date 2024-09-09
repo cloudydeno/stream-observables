@@ -14,7 +14,7 @@
 /**
  * Symbol indicating the end of a stream. Used with `external`.
  */
-export const EOF = Symbol();
+export const EOF: unique symbol = Symbol();
 export type NextFunc<T> = (v: T | typeof EOF) => void;
 
 /**
@@ -25,12 +25,15 @@ export type NextFunc<T> = (v: T | typeof EOF) => void;
  *
  * @typeparam T Type of items to be emitted by the observable.
  */
-export function external<T>(cancel?: UnderlyingSourceCancelCallback) {
+export function external<T>(cancel?: UnderlyingSourceCancelCallback): {
+  observable: ReadableStream<T>;
+  next: NextFunc<T>;
+} {
   let next: NextFunc<T>;
   const observable = new ReadableStream<T>(
     {
       cancel: cancel,
-      async start(controller) {
+      start(controller) {
         next = (v: T | typeof EOF) => {
           if (v === EOF) {
             return controller.close();

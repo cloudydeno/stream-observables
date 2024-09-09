@@ -18,7 +18,7 @@
  * @typeparam T Type of items emitted by the observable.
  * @param f Function to call for each value before it’s discarded.
  */
-export function discard<T>(f: (v: T) => void = () => {}) {
+export function discard<T>(f: (v: T) => void = () => {}): WritableStream<T> {
   return new WritableStream<T>(
     {
       write(chunk: T) {

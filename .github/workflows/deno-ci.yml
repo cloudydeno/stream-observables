@@ -43,3 +43,7 @@ jobs:
 
     - name: Run test suite
       run: time deno test tests/**/*.ts
+
+    - name: Check publish rules
+      run: deno publish --dry-run
+      working-directory: src

@@ -1,6 +1,5 @@
 {
   "name": "@cloudydeno/stream-observables",
   "version": "1.4.0",
-
   "exports": "./mod.ts"
 }
