@@ -74,3 +74,4 @@ jobs:
 
     - name: Publish now
       run: deno publish
+      working-directory: src
