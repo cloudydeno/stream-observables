@@ -11,11 +11,14 @@
  * limitations under the License.
  */
 
-export function externalPromise<T = unknown>() {
+export function externalPromise<T = unknown>(): {
+  resolve: (value?: T) => void;
+  promise: Promise<T>;
+} {
   let resolve: (value?: T) => void;
   const promise = new Promise<T>(
     _resolve => (resolve = _resolve as typeof resolve)
   );
-  // @ts-ignore
+  // @ts-expect-error resolve is not formally 'defined' yet
   return { resolve, promise };
 }

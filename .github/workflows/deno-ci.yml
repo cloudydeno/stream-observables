@@ -14,6 +14,7 @@ jobs:
       matrix:
         deno-version:
         - v1.45
+        - v2.2
         - canary
       fail-fast: false # run each branch to completion
 
@@ -26,8 +27,6 @@ jobs:
       with:
         deno-version: ${{ matrix.deno-version }}
 
-    # "https" cache: code from the Internet
-    # External sources won't change much so we use less precise keys
     - name: Cache https://
       uses: actions/cache@v4
       with:
@@ -44,6 +43,34 @@ jobs:
     - name: Run test suite
       run: time deno test tests/**/*.ts
 
+    - name: Ensure jsr.json is clean
+      run: hack/update-jsr.sh
+
     - name: Check publish rules
       run: deno publish --dry-run
       working-directory: src
+
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    name: Publish to JSR
+    needs: check
+    if: github.event_name == 'push'
+
+    steps:
+    - uses: denoland/setup-deno@v2
+
+    - name: Cache https://
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/deno/deps/https
+        key: deno-https/v1-${{ github.sha }}
+        restore-keys: deno-https/v1-
+
+    - uses: actions/checkout@v4
+
+    - name: Publish now
+      run: deno publish

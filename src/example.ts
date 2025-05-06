@@ -4,7 +4,7 @@ console.log('Tap Enter to add energy!');
 ows.merge(
   ows.fromTimer(500)
     .pipeThrough(ows.map(() => -1)),
-  ows.fromDenoReader(Deno.stdin)
+  ows.fromIterable(Deno.stdin.readable)
     .pipeThrough(ows.map(() => 1)),
 )
   .pipeThrough(
