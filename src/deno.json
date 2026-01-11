@@ -1,6 +1,6 @@
 {
   "name": "@cloudydeno/stream-observables",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "exports": {
     ".": "./mod.ts",
     "./combiners/amb.ts": "./combiners/amb.ts",
