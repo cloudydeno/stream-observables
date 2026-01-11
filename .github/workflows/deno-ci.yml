@@ -42,7 +42,7 @@ jobs:
       run: time deno cache src/example.ts
 
     - name: Ensure jsr.json is clean
-      run: hack/update-jsr.sh
+      run: hack/update-jsr.ts
 
     - name: Run test suite
       run: time deno test tests/**/*.ts
