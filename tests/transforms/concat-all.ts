@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, concatAll, collect, just } from "../../src/mod.ts";
+import { fromIterable, concatAll, collect, just } from "@cloudydeno/stream-observables";
 
 Mocha.describe("concatAll()", function() {
   Mocha.it("concatenates emitted observables", async function() {

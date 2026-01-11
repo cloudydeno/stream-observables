@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, extractFirst } from "../../src/mod.ts";
+import { fromIterable, extractFirst } from "@cloudydeno/stream-observables";
 
 Mocha.describe("extractFirst()", function() {
   Mocha.it("returns the first item", async function() {

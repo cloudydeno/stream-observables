@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, fromIterable, extractLast } from "../../src/mod.ts";
+import { range, fromIterable, extractLast } from "@cloudydeno/stream-observables";
 
 Mocha.describe("extractLast()", function() {
   Mocha.it("returns the last item", async function() {

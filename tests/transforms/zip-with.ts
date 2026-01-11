@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, zipWith, collect } from "../../src/mod.ts";
+import { fromIterable, zipWith, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("zipWith()", function() {
   Mocha.it("combines 2 observables", async function() {

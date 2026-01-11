@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Transform, Observable } from "../types.ts";
+import type { Observable, Transform } from "../types.ts";
 import { combineLatest } from "../combiners/combine-latest.ts";
 
 /**

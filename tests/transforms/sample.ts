@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { sample, collect, external, EOF } from "../../src/mod.ts";
+import { sample, collect, external, EOF } from "@cloudydeno/stream-observables";
 
 import { waitTicks } from "../utils.ts";
 

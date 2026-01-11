@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { external, EOF } from "../../src/mod.ts";
+import { external, EOF } from "@cloudydeno/stream-observables";
 
 Mocha.describe("external()", function() {
   Mocha.it("emits when next() is called", async function() {

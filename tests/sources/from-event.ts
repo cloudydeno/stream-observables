@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromEvent, EOF } from "../../src/mod.ts";
+import { fromEvent, EOF } from "@cloudydeno/stream-observables";
 
 Deno.test({
   name: "fromEvent() / emits on events",

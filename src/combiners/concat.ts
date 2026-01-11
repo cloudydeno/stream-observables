@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.ts";
+import type { Observable } from "../types.ts";
 
 /**
  * Creates an output Observable which sequentially emits all values from

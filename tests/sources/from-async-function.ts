@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { collect, fromAsyncFunction } from "../../src/mod.ts";
+import { collect, fromAsyncFunction } from "@cloudydeno/stream-observables";
 
 Mocha.describe("fromAsyncFunction()", function() {
   Mocha.it("creates observable", async function() {

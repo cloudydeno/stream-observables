@@ -12,7 +12,7 @@
  */
 import { Mocha, chai } from "../deno-shim.ts";
 
-import { fromIterable, zip, collect } from "../../src/mod.ts";
+import { fromIterable, zip, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("zip()", function() {
   Mocha.it("zips multiple observables", async function() {

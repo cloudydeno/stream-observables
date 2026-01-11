@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, takeWhile, collect } from "../../src/mod.ts";
+import { fromIterable, takeWhile, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("take()", function() {
   Mocha.it("takes the n first items", async function() {

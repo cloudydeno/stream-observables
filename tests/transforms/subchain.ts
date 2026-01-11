@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, subchain, filter, map, collect } from "../../src/mod.ts";
+import { range, subchain, filter, map, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("subchain()", function() {
   Mocha.it("runs the subchain", async function() {

@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, distinct, collect } from "../../src/mod.ts";
+import { fromIterable, distinct, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("distinct()", function() {
   Mocha.it("discards sequences of equal items", async function() {

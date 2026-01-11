@@ -1,8 +1,7 @@
 import {
   assert,
-  assertEquals, assertStrictEquals,
-  assertThrows, assertStringIncludes,
-} from "https://deno.land/std@0.170.0/testing/asserts.ts";
+  assertEquals,
+} from "@std/assert";
 
 const suiteStack = new Array<string>();
 

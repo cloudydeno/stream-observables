@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromNext, EOF } from "../../src/mod.ts";
+import { fromNext, EOF } from "@cloudydeno/stream-observables";
 
 Mocha.describe("fromNext()", function() {
   Mocha.it("emits when next() is called", async function() {

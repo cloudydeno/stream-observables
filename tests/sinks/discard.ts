@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, discard } from "../../src/mod.ts";
+import { fromIterable, discard } from "@cloudydeno/stream-observables";
 
 Mocha.describe("discard()", function() {
   Mocha.it("calls a function for each value", async function() {

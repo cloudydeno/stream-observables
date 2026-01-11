@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { external, amb, collect, EOF } from "../../src/mod.ts";
+import { external, amb, collect, EOF } from "@cloudydeno/stream-observables";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("amb()", function() {

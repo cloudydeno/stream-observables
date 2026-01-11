@@ -16,9 +16,9 @@ import {
   exhaust,
   collect,
   external,
+  NextFunc,
   EOF
-} from "../../src/mod.ts";
-import { NextFunc } from "../../src/sources/external.ts";
+} from "@cloudydeno/stream-observables";
 
 import { waitTicks } from "../utils.ts";
 

@@ -12,7 +12,7 @@
  */
 import { Mocha, chai } from "../deno-shim.ts";
 
-import { external, EOF, merge, collect } from "../../src/mod.ts";
+import { external, EOF, merge, collect } from "@cloudydeno/stream-observables";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("merge()", function() {

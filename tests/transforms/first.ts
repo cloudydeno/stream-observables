@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, first, collect } from "../../src/mod.ts";
+import { range, first, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("first()", function() {
   Mocha.it("returns the first item", async function() {

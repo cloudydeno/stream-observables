@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromGenerator } from "../../src/mod.ts";
+import { fromGenerator } from "@cloudydeno/stream-observables";
 
 Mocha.describe("fromGenerator()", function() {
   Mocha.it("works with generators", async function() {
