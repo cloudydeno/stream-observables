@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.ts";
+import type { Observable } from "../types.ts";
 
 /**
  * Creates an observable from a promise, that emits exactly one value when

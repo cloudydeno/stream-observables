@@ -12,7 +12,7 @@
  */
 
 import { external, EOF } from "../sources/external.ts";
-import { Transform } from "../types.ts";
+import type { Transform } from "../types.ts";
 import { extractLast, discard } from "../sinks/mod.ts";
 
 /**

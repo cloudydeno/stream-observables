@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { just, collect } from "../../src/mod.ts";
+import { just, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("just()", function() {
   Mocha.it("emits just one item", async function() {

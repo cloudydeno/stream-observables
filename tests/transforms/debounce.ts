@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { external, debounce, collect, EOF } from "../../src/mod.ts";
+import { external, debounce, collect, EOF } from "@cloudydeno/stream-observables";
 import { waitMs } from "../utils.ts";
 
 Mocha.describe("debounce()", function() {

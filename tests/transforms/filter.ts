@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, filter, collect } from "../../src/mod.ts";
+import { range, filter, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("filter()", function() {
   Mocha.it("removes items that don’t match the predicate", async function() {

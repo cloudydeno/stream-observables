@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.ts";
+import type { Observable } from "../types.ts";
 
 /**
  * Takes in multiple observables but only emits items from the first observable

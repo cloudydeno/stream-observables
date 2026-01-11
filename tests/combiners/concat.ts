@@ -12,7 +12,7 @@
  */
 import { Mocha, chai } from "../deno-shim.ts";
 
-import { external, EOF, concat, collect, range } from "../../src/mod.ts";
+import { external, EOF, concat, collect, range } from "@cloudydeno/stream-observables";
 import { waitTicks } from "../utils.ts";
 
 Mocha.describe("concat()", function() {

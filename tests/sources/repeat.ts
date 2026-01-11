@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { repeat, range, zipWith, collect } from "../../src/mod.ts";
+import { repeat, range, zipWith, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("repeat()", function() {
   Mocha.it("repeats the same value infinitely", async function() {

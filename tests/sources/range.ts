@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, collect } from "../../src/mod.ts";
+import { range, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("range()", function() {
   Mocha.it("emits a series of integers", async function() {

@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, collect } from "../../src/mod.ts";
+import { fromIterable, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("collect()", function() {
   Mocha.it("returns all items with an array", async function() {

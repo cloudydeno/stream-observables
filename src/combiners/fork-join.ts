@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-import { Observable } from "../types.ts";
+import type { Observable } from "../types.ts";
 import { zip } from "./zip.ts";
 import { last } from "../transforms/last.ts";
 

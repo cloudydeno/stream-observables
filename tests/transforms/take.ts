@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, take, collect } from "../../src/mod.ts";
+import { range, take, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("take()", function() {
   Mocha.it("takes the n first items", async function() {

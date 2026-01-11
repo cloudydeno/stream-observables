@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, bufferWithCount, collect } from "../../src/mod.ts";
+import { range, bufferWithCount, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("bufferWithCount()", function() {
   Mocha.it("splits the stream into chunks", async function() {

@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, single } from "../../src/mod.ts";
+import { fromIterable, single } from "@cloudydeno/stream-observables";
 
 Mocha.describe("single()", function() {
   Mocha.it(

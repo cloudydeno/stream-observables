@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, endWith, collect } from "../../src/mod.ts";
+import { fromIterable, endWith, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("endWidth()", function() {
   Mocha.it("ends in the given items", async function() {

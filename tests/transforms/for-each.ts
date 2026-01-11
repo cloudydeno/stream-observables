@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromIterable, forEach, collect, range } from "../../src/mod.ts";
+import { fromIterable, forEach, collect, range } from "@cloudydeno/stream-observables";
 import { waitTicks, waitTask } from "../utils.ts";
 
 Mocha.describe("forEach()", function() {

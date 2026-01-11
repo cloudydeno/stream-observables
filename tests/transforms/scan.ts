@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, scan, collect } from "../../src/mod.ts";
+import { range, scan, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("scan()", function() {
   Mocha.it(

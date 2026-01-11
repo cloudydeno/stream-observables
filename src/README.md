@@ -1,10 +1,14 @@
 This module is a Deno-friendly port
 of [observables-with-streams](https://github.com/surma/observables-with-streams).
 
-Published to `jsr.io` as `@cloudydeno/stream-observables`.
+Considered feature-complete and effectively frozen.
+Updates are generally only for improved compatibility with newer Deno versions.
+
+[Published to `jsr.io` as `@cloudydeno/stream-observables`](https://jsr.io/@cloudydeno/stream-observables).
 Read more about [using packages](https://jsr.io/docs/using-packages).
 
-Published to `/x/` as `stream_observables`.
+(Previously) published to `/x/` as `stream_observables`.
+This location won't be receiving further releases, but is still usable
 Import from `https://deno.land/x/stream_observables@v1.3/`.
 
 Subset of original README below:

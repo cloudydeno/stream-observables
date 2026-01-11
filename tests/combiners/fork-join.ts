@@ -12,7 +12,7 @@
  */
 import { Mocha, chai } from "../deno-shim.ts";
 
-import { forkJoin, range, single } from "../../src/mod.ts";
+import { forkJoin, range, single } from "@cloudydeno/stream-observables";
 
 Mocha.describe("forkJoin()", function() {
   Mocha.it("merges multiple observables", async function() {

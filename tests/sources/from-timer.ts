@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { fromTimer, take, collect } from "../../src/mod.ts";
+import { fromTimer, take, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("fromTimer()", function() {
   Mocha.it("emits null in the given interval", async () => {

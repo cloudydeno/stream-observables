@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { collect, just, switchMap, range } from "../../src/mod.ts";
+import { collect, just, switchMap, range } from "@cloudydeno/stream-observables";
 
 Mocha.describe("switch-all()", function() {
   Mocha.it("re-emit the first observable", async function() {

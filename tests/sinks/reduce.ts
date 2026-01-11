@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, reduce } from "../../src/mod.ts";
+import { range, reduce } from "@cloudydeno/stream-observables";
 
 Mocha.describe("reduce()", function() {
   Mocha.it("reduces over the items of an observable", async function() {

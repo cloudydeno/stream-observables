@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 import { Mocha, chai } from "../deno-shim.ts";
-import { range, map, collect } from "../../src/mod.ts";
+import { range, map, collect } from "@cloudydeno/stream-observables";
 
 Mocha.describe("map()", function() {
   Mocha.it("maps each item", async function() {
