@@ -17,9 +17,19 @@
  * The signature, however, does not match the one precedented in ReactiveX
  * and other languages. In its current incarnation, Observables are synonymous
  * with [WHATWG `ReadableStream`](https://streams.spec.whatwg.org/#rs-class).
- *
- * @typeparam T Type of items emitted by the observable.
- */
-
+*
+* @typeparam T Type of items emitted by the observable.
+*/
 export type Observable<T> = ReadableStream<T>;
+
+/**
+ * Represents an instantiated transformation that can be attached
+ * to a given {@link Observable} using its `.pipeThrough()` method.
+ * In this library, Transform is synonymous
+ * with [WHATWG `TransformStream`](https://streams.spec.whatwg.org/#rs-class).
+ * ReactiveX doesn't appear to have a matching abstraction.
+ *
+ * @typeparam S Type of items accepted by the transform.
+ * @typeparam T Type of items emitted by the transform.
+ */
 export type Transform<S, T = S> = TransformStream<S, T>;

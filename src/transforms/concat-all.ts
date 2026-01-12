@@ -12,7 +12,6 @@
  */
 
 import type { Observable, Transform } from "../types.ts";
-import { externalPromise } from "../utils.ts";
 
 /**
  * Converts a higher-order Observable into a first-order Observable

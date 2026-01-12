@@ -1,30 +1,64 @@
-This module is a Deno-friendly port
-of [observables-with-streams](https://github.com/surma/observables-with-streams).
+# Observables using Web Streams (JS/TS)
 
-Considered feature-complete and effectively frozen.
-Updates are generally only for improved compatibility with newer Deno versions.
+A catalog of
+[Sources](https://jsr.io/@cloudydeno/stream-observables/doc/sources),
+[Transforms](https://jsr.io/@cloudydeno/stream-observables/doc/transforms),
+[Sinks](https://jsr.io/@cloudydeno/stream-observables/doc/sinks), and
+[Combiners](https://jsr.io/@cloudydeno/stream-observables/doc/combiners)
+(a la ReactiveX)
+implemented using the Web Streams API (a la `TransformStream`)
+which is now native to all modern Javascript runtimes.
 
-[Published to `jsr.io` as `@cloudydeno/stream-observables`](https://jsr.io/@cloudydeno/stream-observables).
+## Background
+
+Useful for modules that want to process data or object `ReadableStream`s with a more concise API,
+or when producing programs that want to react to multiple inbound data sources in an ordered way.
+Transforms from this library seamlessly interoperate with normal `TransformStream` implementations
+such as `CompressionStream`.
+
+This module has no dependencies and considered feature-complete.
+Updates are generally only for improved compatibility with newer runtimes.
+
+A Deno-friendly port
+of [surma's observables-with-streams](https://github.com/surma/observables-with-streams).
+
+## 🚨 Breaking Change in `v1.5.0`
+
+All exported modules were renamed to remove `.ts` extensions and `/mod.ts` filenames.
+
+If you only import the default export (`@cloudydeno/stream-observables`) then you don't need to change anything.
+
+| Import specifier in v1.4 and earlier              | Import specifier starting in v1.5              |
+|---------------------------------------------------|------------------------------------------------|
+| `@cloudydeno/stream-observables/mod.ts`           | `@cloudydeno/stream-observables`               |
+| `@cloudydeno/stream-observables/sinks/mod.ts`     | `@cloudydeno/stream-observables/sinks`         |
+| `@cloudydeno/stream-observables/sinks/collect.ts` | `@cloudydeno/stream-observables/sinks/collect` |
+
+## Installation
+
+Releases are [published to `jsr:@cloudydeno/stream-observables`](https://jsr.io/@cloudydeno/stream-observables).
+The sidebar contains setup instructions for the common package managers.
 Read more about [using packages](https://jsr.io/docs/using-packages).
 
-(Previously) published to `/x/` as `stream_observables`.
-This location won't be receiving further releases, but is still usable
-Import from `https://deno.land/x/stream_observables@v1.3/`.
+For example, when using Deno:
 
-Subset of original README below:
+```sh
+deno add jsr:@cloudydeno/stream-observables
+```
 
-# Observables with Streams
+or Yarn (on nodejs):
 
-A library for observables built with [WHATWG streams](https://streams.spec.whatwg.org).
-This library is inspired by [ReactiveX’s operators](http://reactivex.io/documentation/operators.html)
-and implements a subset of them using [streams](https://streams.spec.whatwg.org).
+```sh
+yarn add jsr:@cloudydeno/stream-observables
+```
 
-The goal of this library is to implement observables making as much use of the platform as possible and being highly tree-shakeable.
+Also previously published to `/x/`: `https://deno.land/x/stream_observables@v1.3/`
+This frozen release won't be receiving further releases.
 
-## Example
+## Example Usage
 
 ```typescript
-import * as ows from "jsr:@cloudydeno/stream-observables@^1.4.0";
+import * as ows from "@cloudydeno/stream-observables";
 
 console.log('Tap Enter to add energy!');
 ows.merge(
@@ -48,11 +82,11 @@ ows.merge(
 
 ## Documentation
 
-The (somewhat lacking) documentation for the original library is hosted at https://observables-with-streams.surma.technology
+[All exported functions are documented on JSR](https://jsr.io/@cloudydeno/stream-observables/doc).
 
-## Caveats
+The [Web Streams API has documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) for information on what the platform offers.
 
-For a good primer about streams, read this [blog post](https://jakearchibald.com/2016/streams-ftw/) by [Jake Archibald](https://twitter.com/jaffathecake/) (he is aware the title hasn’t aged well).
+For those unfamiliar with Web Streams, try this [blog post](https://jakearchibald.com/2016/streams-ftw/) by [Jake Archibald](https://twitter.com/jaffathecake/) (he is aware the title hasn’t aged well).
 
 ---
 

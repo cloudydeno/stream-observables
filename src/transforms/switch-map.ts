@@ -12,7 +12,6 @@
  */
 
 import type { Observable, Transform } from "../types.ts";
-import { externalPromise } from "../utils.ts";
 import { map } from "./map.ts";
 import { switchAll } from "./switch-all.ts";
 

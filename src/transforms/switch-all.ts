@@ -44,7 +44,7 @@ export function switchAll<T>(): Transform<Observable<T>, T> {
                 break;
               }
               controller.enqueue(value!);
-            } catch (e) {
+            } catch {
               break;
             }
           }
