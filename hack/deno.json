@@ -1,5 +1,5 @@
 {
   "imports": {
-    "@std/fs": "jsr:@std/fs@^1"
+    "@std/fs": "jsr:@std/fs@^1.0.24"
   }
 }
