@@ -29,6 +29,6 @@ export function fromTimer(ms: number): Observable<null> {
     }
     clearInterval(timer);
   });
-  timer = setInterval(() => next(), ms);
+  timer = setInterval(() => next(null), ms);
   return observable;
 }
