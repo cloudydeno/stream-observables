@@ -21,11 +21,14 @@ import { external } from "./external.ts";
  * @returns New observable that emits null values.
  */
 export function fromTimer(ms: number): Observable<null> {
-  let timer: number | null = null;
+  let timer: number | { close: () => unknown } | null = null;
   const { next, observable } = external<null>(() => {
-    if (typeof timer !== 'number') return;
+    if (typeof timer !== 'number') {
+      timer?.close();
+      return;
+    }
     clearInterval(timer);
   });
-  timer = setInterval(next, ms);
+  timer = setInterval(() => next(null), ms);
   return observable;
 }
